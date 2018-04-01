@@ -1,0 +1,220 @@
+{% extends 'blog/base.html' %}
+
+{% load staticfiles %}
+
+{% block title %}
+    Blog {{ post.id }}
+{% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+{% endblock %}
+
+{% block body %}
+
+
+<!--================================= page-title -->
+
+<section class="page-title bg-overlay-black-60 parallax" data-jarallax='{"speed": 0.6}' style="background-image: url({% static 'media/22.jpg' %});">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="page-title-name">
+                    <!-- <h1>blog single image post</h1> -->
+                    <!-- <p>We know the secret of your success</p> -->
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--================================= page-title -->
+
+<!--================================= Blog -->
+
+<section class="blog blog-single white-bg page-section-ptb">
+    <div class="container">
+        <div class="row">
+            <!-- ========================== -->
+            <div class="col-lg-9 col-md-9">
+                <div class="blog-entry mb-10">
+                    <div class="entry-image clearfix">
+                        <img class="img-responsive" src="{% static 'media/posts/13.jpg' %}" alt="">
+                    </div>
+                    <div class="blog-detail">
+                        <div class="entry-meta mb-10">
+                            <ul>
+                                <li> <i class="fa fa-user"></i> <a href="author={{ post.author }}">By {{ post.author }}</a> </li>
+                                <!-- <li> <i class="fa fa-folder-open-o"></i> <a href="#"> Design,</a> <a href="#"> HTML5 </a> </li> -->
+                                <li><i class="fa fa-calendar-o"></i> {{ post.timestamp }}</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- ================================================ -->
+                <div class="blog-entry entry-content mt-20 mb-30 post-1 clearfix">
+                    
+                    <h2>{{ post.title }}</h2>
+                    
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12">
+                            <img class="img-responsive image-content" src="images/portfolio/01.jpg" alt="">
+                            <p>{{ post.content }}</p> <br/>
+                            
+                        </div>
+                    </div>
+                    <br/>
+
+                    <div class="entry-share clearfix">
+                        <div class="tags">
+                            <h5>Tags:</h5>                            
+                            <ul>
+                                {% for tag in post.tags.all %}
+                                    <li><a href="tag={{ tag }}">{{ tag }}</a></li>
+                                {% endfor %}                                
+                            </ul>
+                        </div>
+                        <div class="social list-style-none pull-right mt-10">
+                            <strong>Share : </strong>
+                            <ul>
+                                <li>
+                                    <a href="#"> <i class="fa fa-facebook"></i> </a>
+                                </li>
+                                <li>
+                                    <a href="#"> <i class="fa fa-twitter"></i> </a>
+                                </li>
+                                <li>
+                                    <a href="#"> <i class="fa fa-pinterest-p"></i> </a>
+                                </li>
+                                <li>
+                                    <a href="#"> <i class="fa fa-dribbble"></i> </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="related-work mt-40">
+                    <div class="row">
+                        <div class="col-ld-12 col-md-12">
+                            <h3 class="theme-color mb-20">Related Post</h3>
+                            <div class="owl-carousel" data-nav-dots="false" data-items="2" data-xs-items="1" data-xx-items="1">
+                                <div class="item">
+                                    <div class="blog-box blog-1 active">
+                                        <div class="blog-info">
+                                            <span class="post-category"><a href="#">Business</a></span>
+                                            <h4> <a href="#"> Does your life lack meaning</a></h4>
+                                            <p>I truly believe Augustine’s words are true and if you look at history you know it is true.</p>
+                                            <span><i class="fa fa-user"></i> By Webster</span>
+                                            <span><i class="fa fa-calendar-check-o"></i> 21 April 2016 </span>
+                                        </div>
+                                        <div class="blog-box-img" style="background-image: url({% static 'media/22.jpg' %});"></div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="blog-box blog-1 active">
+                                        <div class="blog-info">
+                                            <span class="post-category"><a href="#">Business</a></span>
+                                            <h4> <a href="#"> Supercharge your motivation</a></h4>
+                                            <p>We also know those epic stories, those modern-day legends surrounding the.</p>
+                                            <span><i class="fa fa-user"></i> By Webster</span>
+                                            <span><i class="fa fa-calendar-check-o"></i> 21 April 2016 </span>
+                                        </div>
+                                        <div class="blog-box-img" style="background-image: url({% static 'media/22.jpg' %});"></div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="blog-box blog-1 active">
+                                        <div class="blog-info">
+                                            <span class="post-category"><a href="#">Business</a></span>
+                                            <h4> <a href="#">  Helen keller a teller & a seller </a></h4>
+                                            <p>I truly believe Augustine’s words are true and if you look at history you know it is true.</p>
+                                            <span><i class="fa fa-user"></i> By Webster</span>
+                                            <span><i class="fa fa-calendar-check-o"></i> 21 April 2016 </span>
+                                        </div>
+                                        <div class="blog-box-img" style="background-image: url({% static 'media/22.jpg' %});"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- ================================================ -->
+
+
+                <div class="blog-comments mt-40">
+                    <div class="comments-1">
+                        <div class="comments-photo">
+                            <img class="img-responsive" src="{% static 'media/blog/01.jpg' %}" alt="">
+                        </div>
+                        <div class="comments-info">
+                            <h5 class="theme-color"> Kevin Martin <span>Sep 15, 2017</span></h5>
+                            <div class="port-post-social pull-right">
+                                <a href="#">Reply</a>
+                            </div>
+                            <p>Sit amet nibh vulputate cursus a sit amet mauris lorem ipsum dolor sit amet of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis
+                                sem nibh id elit. Duis sed odio Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat </p>
+                        </div>
+                    </div>
+                    <div class="comments-1 comments-2">
+                        <div class="comments-photo">
+                            <img class="img-responsive" src="{% static 'media/blog/01.jpg' %}" alt="">
+                        </div>
+                        <div class="comments-info">
+                            <h5 class="theme-color"> Kevin Martin <span>Sep 15, 2017</span></h5>
+                            <div class="port-post-social pull-right">
+                                <a href="#">Reply</a>
+                            </div>
+                            <p>Vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor Lorem ipsum dolor sit amet of Lorem Ipsum. Proin gravida nibh..</p>
+                        </div>
+                    </div>
+                    <div class="comments-1 comments-2">
+                        <div class="comments-photo">
+                            <img class="img-responsive" src="{% static 'media/blog/01.jpg' %}" alt="">
+                        </div>
+                        <div class="comments-info">
+                            <h5 class="theme-color"> Kevin Martin <span>Sep 15, 2017</span></h5>
+                            <div class="port-post-social pull-right">
+                                <a href="#">Reply</a>
+                            </div>
+                            <p>Aenean sollicitudin, lorem quis bibendum auctor Lorem ipsum dolor sit amet of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet..</p>
+                        </div>
+                    </div>
+                    <div class="comments-1">
+                        <div class="comments-photo">
+                            <img class="img-responsive" src="{% static 'media/blog/01.jpg' %}" alt="">
+                        </div>
+                        <div class="comments-info">
+                            <h5 class="theme-color"> Kevin Martin <span>Sep 15, 2017</span></h5>
+                            <div class="port-post-social pull-right">
+                                <a href="#">Reply</a>
+                            </div>
+                            <p>Bibendum auctor Lorem ipsum dolor sit amet of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh
+                                vulputate cursus a sit amet mauris Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ================================================ -->
+            </div>
+
+            <div class="col-lg-3 col-md-3">
+                <div class="sidebar-widget">
+                    <h6 class="mb-20">Search</h6>
+                    <div class="widget-search">
+                        <i class="fa fa-search"></i>
+                        <input type="search" class="form-control" placeholder="Search...." />
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--================================= Blog -->
+
+<div id="back-to-top"><a class="top arrow" href="#top"><i class="fa fa-angle-up"></i> <span>TOP</span></a></div>
+
+
+{% endblock %}

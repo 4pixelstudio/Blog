@@ -1,0 +1,168 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />
+	<meta name="author" content="site.com" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+	<title>{% block title %}{% endblock %}</title>
+
+	<!-- Favicon -->
+	<!-- <link rel="shortcut icon" href="images/favicon.ico" /> -->
+
+	<!-- Plugins -->
+	<link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}" />
+	<link rel="stylesheet" type="text/css" href="{% static 'css/mega_menu.css' %}" />
+	<link rel="stylesheet" type="text/css" href="{% static 'css/font-awesome.min.css' %}" />
+
+	<link rel="stylesheet" href="{% static 'css/style_index.css' %}">
+
+	<!-- Responsive -->
+	<link rel="stylesheet" type="text/css" href="{% static 'css/responsive.css' %}" />
+
+    {% block css %}
+    {% endblock %}
+
+</head>
+<body>
+<div class="wrapper">
+
+    <div id="pre-loader">
+        
+    </div>
+
+    <!--================================= header -->
+
+    <header id="header" class="header default">
+
+        <!--================================= mega menu -->
+
+        <div class="menu">
+            <!-- menu start -->
+            <nav id="menu" class="mega-menu">
+                <!-- menu list items container -->
+                <section class="menu-list-items">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12 col-md-12 x-hidden">
+                                <!-- menu logo -->
+                                <ul class="menu-logo">
+                                    <li>
+                                        <a href="{% url 'index'  %}"><img id="logo_img" src="{% static 'media/logo.png' %}" alt="logo"> </a>
+                                    </li>
+                                </ul>
+                                <!-- menu links -->
+                                <div class="menu-bar">
+                                    <ul class="menu-links">
+                                        <li><a href="" data-toggle="modal" data-target="#LoginModal">Login</a></li>
+                                        <li class="active"><a href="/">Home</a></li>
+                                        <li><a href="">About</a></li>
+                                        <li><a href="">Contact</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </nav>
+            <!-- menu end -->
+        </div>
+    </header>
+
+    <!--================================= header -->
+
+    {% block body %}
+    {% endblock %}
+
+</div>
+
+<footer class="footer page-section-pt" style="padding: 0px;">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12">
+                <div class="divider mt-50 mb-50"></div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-5 col-md-5">
+                <div class="about-content">
+                    <h6 class="mb-20 text-uppercase">about us</h6>
+                    <p>Webster is the most enticing, creative, modern and multipurpose Premium HTML5 Template suitable for any business or corporate websites. Build whatever you like with the Webster. It has endless possibilities for creating stunning websites
+                        no matter what type of business is!</p>
+                </div>
+            </div>
+            <div class="col-lg-7 col-md-7">
+                <h6 class="mb-20 text-uppercase">Useful Links</h6>
+                <div class="usefull-link">
+                    <div class="row">
+                        <div class="col-lg-4 col-sm-4">
+                            <ul>
+                                <li><a href="#">Home</a></li>
+                                <li><a href="#">About Us</a></li>
+                                <li><a href="#">Service</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-4 col-sm-4">
+                            <ul>
+                                <li><a href="#">Contact Us</a></li>
+                                <li><a href="#">Create Account</a></li>
+                                <li><a href="#">Company Philosophy</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-4 col-sm-4">
+                            <ul>
+                                <li><a href="#">Corporate Culture</a></li>
+                                <li><a href="#">Portfolio</a></li>
+                                <li><a href="#">Client Management</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="copyright gray-bg mt-50">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-sm-6">
+                    <ul class="list-inline text-left">
+                        <li><a href="#">Terms &amp; Conditions </a> &nbsp;&nbsp;&nbsp;|</li>
+                        <li><a href="#">API Use Policy </a> &nbsp;&nbsp;&nbsp;|</li>
+                        <li><a href="#">Privacy Policy </a> </li>
+                    </ul>
+                </div>
+                <div class="col-lg-6 col-sm-6">
+                    <div class="text-right">
+                        <p> &copy;Copyright <span id="copyright"> <script>document.getElementById('copyright').appendChild(document.createTextNode(new Date().getFullYear()))</script></span> <a href="#"> Webster </a> All Rights Reserved </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jquery -->
+<script type="text/javascript" src="{% static 'js/jquery-1.12.4.min.js' %}"></script>
+
+<!-- plugins-jquery -->
+<script type="text/javascript" src="{% static 'js/plugins-jquery.js' %}"></script>
+
+<!-- plugin_path -->
+<script type="text/javascript">
+    var plugin_path = "{% static 'js/' %}";
+</script>
+
+<!-- custom -->
+<script type="text/javascript" src="{% static 'js/custom.js' %}"></script>
+
+{% block js %}
+{% endblock %}
+			
+</body>
+</html>
